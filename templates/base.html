@@ -1,0 +1,33 @@
+{# base.html template #}
+{% load staticfiles %}
+<!doctype html>
+<html>
+    <head>
+        <title>Morty the Mage</title>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300,400,700|Roboto:500,500i">
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+    </head>
+    <body>
+        <div id="header">
+            <div id="clouds"></div>
+            <div id="grass"></div>
+            <div class="wrapper">
+                <div id="logo"></div>
+                <div id="morty"></div>
+                <div id="nav">
+                    {% block navlist %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div id="back"><div class="wrapper">{% block back %}{% endblock %}</div></div>
+        </div>
+    	{% block content %}
+    	{% endblock %}
+    	<script src="/static/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+        <script src="/static/js/main.js" type="text/javascript"></script>
+        <script src="/static/js/func.js" type="text/javascript"></script>
+        <script src="/static/js/prism.js" type="text/javascript"></script>
+    </body>
+</html>
+<!-- Copyright 2016 Christopher Riccitelli -->

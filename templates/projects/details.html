@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block navlist %}
+			<a href="/projects" class="active">programs</a>
+			<a href="/">projects</a>
+			<a href="/about">about</a>
+{% endblock %}
+{% block back %}<a href="/projects"><&nbsp;&nbsp;back</a>{% endblock %}
+{% block content %}
+<div id="details">
+	<div class="paper">
+	<h2>{{ project.project_title }}</h2>
+	<h4>{{ project.pub_date }}</h4>
+	{% for detail in project.detail_set.all %}
+	<p>{% autoescape off %}{{ detail.detail_text }}{% endautoescape %}</p>
+	{% endfor %}
+	</div>
+	<div class="file">
+	{% for file in project.file_set.all %}
+	{% if ".py" in file.file_name %}
+	<h3>{{ file.file_name }}&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/{{ file.file_field.url }}" target="about_blank">download</a></h3>
+	<pre class="line-numbers"><code class="language-python">{% for line in file.read_file %}{{ line }}{% endfor %}</code></pre>
+	{% endif %}
+	{% endfor %}
+	</div>
+</div>
+{% endblock %}

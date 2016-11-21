@@ -1,0 +1,43 @@
+site map
+
+help.me
+    /directory
+        /first
+        /last
+        /phone
+        /ext
+        /fax
+        /department
+
+    /how to (optional sort by most useful [highest votes])
+        /Account
+        /General
+        /Internet Explorer
+        /Microsoft Office
+        /PDF
+        /Printers
+        * /Savin
+        /Security
+        * /Server
+        /Software
+        /Telephone
+        /Website
+        /Windows 7
+
+    /control panel
+        /Settings
+        /Employee Documents
+        /Department Information
+        /Submit Support Ticket
+        /* Ticket Management
+
+    /help desk
+        /Submit a Support Request (ticket)
+        /View previously submitted tickets
+        /* Ticket Management
+        
+    /log
+        /in
+        /out
+        /forgot password
+        

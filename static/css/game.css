@@ -1,0 +1,32 @@
+/*
+	Game.css
+*/
+html, body{
+	background-color:#000000;
+	margin:0px;
+	padding:0px;
+	position:fixed;
+	top:0px; right:0px; bottom:0px; left:0px;
+}
+#nav{
+	display:block;
+	float:right;
+	font-family:"Lato", "Roboto", sans-serif;
+	font-weight:900;
+	margin:0px;
+	padding:16px 0px;
+	position:fixed;
+	top:0px;
+	right:8px;
+}
+#nav a, #nav a:visited{
+	color:rgba(127,127,127,0.5);
+	display:block;
+	float:left;
+	margin:0px 8px;
+	padding:0px;
+	text-decoration:none;
+}
+#nav a:hover, #nav a:active, #nav a.active{
+	color:rgba(127,127,127,1.0);
+}

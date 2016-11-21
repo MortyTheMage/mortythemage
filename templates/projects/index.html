@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block navlist %}
+			<a href="/projects" class="active">programs</a>
+			<a href="/">game</a>
+			<a href="/about">about</a>
+{% endblock %}
+{% block content %}
+{% include "projects/info.html" %}
+<div id="details">
+	<div class="paper">
+		<p>Here you'll find a growing collection of programs as I work my way through Karan's Mega Project List on Github in various languages.</p>
+		<p>Note: These programs are developed and intended to work on gnu/linux. I cannot guarantee any cross-platform compatibility.</p>
+	</div>
+		{% if project_list %}
+		{% for project in project_list %}
+	<div class="paper">
+		<h2><a href="{% url 'projects:detail' project.id %}">{{ project.project_title }}</a></h2>
+		<h4>{{ project.pub_date }}</h4>
+		<div class="category">{{ project.category }}</div>
+		{% for detail in project.detail_set.all %}
+		{% if forloop.first %}
+			<p>{% autoescape off %}{{ detail.detail_text }}{% endautoescape %}</p>
+		{% endif %}
+		{% endfor %}
+		<p><a href="{% url 'projects:detail' project.id %}">Read more...</a></p>
+	</div>
+		{% endfor %}
+		{% else %}
+		<p>Sorry, we couldn't find any projects for you to look at. Check back later.</p>
+		{% endif %}
+</div>
+{% endblock %}
